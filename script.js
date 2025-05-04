@@ -120,7 +120,6 @@ const progressObserver = new IntersectionObserver((entries) => {
       const percentElement = entry.target.closest('.skill-item').querySelector('.skill-percent');
       percentElement.textContent = '0%';
 
-      // Animate width and percentage text
       const animate = (timestamp) => {
         if (!start) start = timestamp;
         const progress = timestamp - start;
