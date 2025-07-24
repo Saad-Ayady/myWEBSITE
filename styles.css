@@ -123,15 +123,20 @@ img {
   height: auto;
 }
 
-/* ✅✅✅ RESPONSIVE MEDIA QUERY */
 @media (max-width: 600px) {
+  body {
+    background: #fff; /* بيضاء بلا صورة */
+    background-image: none;
+  }
+
   .home {
     width: 95%;
     padding: 0 10px;
   }
 
   .pro {
-    flex-direction: column; /* الصورة و الكود تحت بعضهم */
+    display: flex;
+    flex-direction: column; /* الصورة + الكود يهبط تحتها */
     align-items: center;
     text-align: center;
   }
@@ -142,12 +147,15 @@ img {
   }
 
   .code {
+    position: static; /* نحيّد absolute */
     margin: 0;
-    position: static;
+    background: rgba(0, 0, 0, 0.1); /* خفيف */
+    padding: 10px;
   }
 
   .link {
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 5px; /* قرب المسافة بينهم */
   }
 
   .long-code {
