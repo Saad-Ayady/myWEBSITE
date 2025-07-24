@@ -1,141 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Saad Ayady - Full-Stack Developer & Security Specialist</title>
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-  <!-- AOS Animation CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
-
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      background: url('https://i.pinimg.com/736x/61/de/f4/61def47e45d7095abc20e5f6462f6e5f.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-      font-family: 'Poppins', sans-serif;
-    }
-    .section {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 80px 0;
-    }
-    .profile-img {
-      max-width: 200px;
-      border-radius: 50%;
-      border: 5px solid #fff;
-      margin-bottom: 20px;
-    }
-    .skill-icon {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-    .badge-img {
-      border: 3px solid #fff;
-      border-radius: 8px;
-      transition: transform 0.3s ease;
-    }
-    .badge-img:hover {
-      transform: scale(1.1);
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Saad WEB SITE</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Yusei+Magic&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="home">
+    <div class="before"></div>
+    <div class="link">
+      <a href="#">[Home]</a>
+      <a href="#">[BugBounty]</a>
+      <a href="#">[MyCodes]</a>
+      <a href="#">[Contect]</a>
+    </div>
+        <hr style="margin-top: 10px;margin-bottom: 10px;">
+    <div class="pro">
+      <img src="https://i.pinimg.com/1200x/bc/81/52/bc8152c6fde9819eedf24c215e2ba93a.jpg" alt="profel" />
+      <div class="code">
+        <p>
+          <span class="dec">char </span><span class="var_name">firstName</span><span class="spech_char">[</span><span>10</span><span class="spech_char">]</span><span class="igal"> = </span><span class="varData">"Said"</span><span class="spech_char">;</span>
+        </p>
+        <p>
+          <span class="dec">char </span><span class="var_name">lasttName</span><span class="spech_char">[</span><span>10</span><span class="spech_char">]</span><span class="igal"> = </span><span class="varData">"Ayady"</span><span class="spech_char">;</span>
+        </p>
+        <p>
+          <span class="dec">int  </span><span class="var_name"> age</span><span class="igal"> = </span><span class="varData">20</span><span class="spech_char">;</span>
+        </p>
+        <p>
+          <span class="dec">char </span><span class="var_name">contrue</span><span class="spech_char">[</span><span>10</span><span class="spech_char">]</span><span class="igal"> = </span><span class="varData">"Morocoo"</span><span class="spech_char">;</span>
+        </p>
+      </div>
+    </div>
+    <hr style="margin-top: 10px;margin-bottom: 10px;">
+    <div class="box">
+      <h2>
+        <span>[+] </span>
+      INTRODUCTION : 
+      </h2>
+      <p>- Hello, I am Said Ayady, I am a Moroccan penetration tester, and I am also good at developing very secure programs, and I also always like to develop my own tools using different technologies.</p>
+    </div>
+        <hr style="margin-top: 10px;margin-bottom: 10px;">
+    <div class="box">
+      <h2>
+        <span>[?] </span>
+      WHAT IS THE NEXT : 
+      </h2>
+      <p>- Well, I am currently interested in studying reverse engineering and understanding the program’s code, as well as analyzing it well in order to extract bugs and convert them into vulns, as well as developing exploits for them.</p>
+      <p>- I have also reached an advanced level in this.</p>
+    </div>
+        <hr style="margin-top: 10px;margin-bottom: 10px;">
 
-<!-- Hero / Profile Section -->
-<section id="hero" class="section text-center">
-  <div class="container">
-    <img src="https://media.licdn.com/dms/image/v2/D4E03AQE87dEJXLMWJg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1722567768313?e=1757548800&v=beta&t=3qOmFTZpMyJjvEXH1yZZnlR8Z-hmVOgJ6zYhaa68VCY" alt="Saad Ayady" class="profile-img">
-    <h1>Saad Ayady</h1>
-    <h4>Advanced Full-Stack Developer & Pentester</h4>
-    <p>I build secure, modern applications and hunt vulnerabilities to keep systems safe. Combining deep knowledge in software engineering and cybersecurity, I deliver robust solutions by design.</p>
-  </div>
-</section>
-
-<!-- Skills Section -->
-<section id="skills" class="section text-center">
-  <div class="container">
-    <h2>My Skills</h2>
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="skill-icon"><i class="fab fa-react"></i></div>
-        <h5>React</h5>
-        <p>Building dynamic interfaces with React, hooks, and state management.</p>
+    <div class="box">
+      <h2>
+        <span>[?] </span>
+      WHAT LANGUAGE AM I FLUENT IN :
+      </h2>
+      <p>- This field forced me to learn many languages and techniques, even master them, so I will mention some of them here and the field in which I learned them</p>
+      <div class="long-code">
+        <p>Web PT : </p>
+        <img src="https://www.svgrepo.com/show/373966/php.svg">
+        <img src="https://www.svgrepo.com/show/452091/python.svg">
+        <img src="https://www.svgrepo.com/show/452045/js.svg">
+        <img src="https://www.svgrepo.com/show/452214/go.svg">
+        <img src="https://www.svgrepo.com/show/373442/asp.svg">
+        <img src="https://www.svgrepo.com/show/303251/mysql-logo.svg">
+        <img src="https://www.svgrepo.com/show/353985/laravel.svg">
       </div>
-      <div class="col-md-4 mb-4">
-        <div class="skill-icon"><i class="fab fa-node-js"></i></div>
-        <h5>Node.js</h5>
-        <p>Back-end development with Express.js, APIs, and microservices.</p>
+      <div class="long-code">
+        <p>ReverseEngineering & Debugging  : </p>
+        <img src="https://www.svgrepo.com/show/373528/cpp3.svg">
+        <img src="https://img.icons8.com/?size=256&id=40670&format=png">
+        <img src="https://img.icons8.com/?size=256w&id=mldPmcCMMrFh&format=png">
       </div>
-      <div class="col-md-4 mb-4">
-        <div class="skill-icon"><i class="fab fa-python"></i></div>
-        <h5>Python</h5>
-        <p>Scripting, automation, backend APIs with Django/Flask.</p>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
-        <h5>Security & Pentesting</h5>
-        <p>OWASP, manual testing, exploit development, bug bounty.</p>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="skill-icon"><i class="fas fa-database"></i></div>
-        <h5>Databases</h5>
-        <p>MySQL, PostgreSQL, MongoDB. Design, queries & optimizations.</p>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="skill-icon"><i class="fab fa-docker"></i></div>
-        <h5>DevOps & Docker</h5>
-        <p>Containerization, CI/CD pipelines, deployment automation.</p>
+      <div class="long-code">
+        <p>Develop Tools : </p>
+        <img src="https://www.svgrepo.com/show/374056/rust.svg">
+        <img src="https://www.svgrepo.com/show/452214/go.svg">
+        <img src="https://www.svgrepo.com/show/452091/python.svg">
+        <img src="https://www.svgrepo.com/show/354298/ruby.svg">
       </div>
     </div>
   </div>
-</section>
-
-<!-- Badges Section -->
-<section id="badges" class="section text-center">
-  <div class="container">
-    <h2>TryHackMe Badges</h2>
-    <div class="row">
-      <!-- Add all badges -->
-      <div class="col-6 col-md-3 mb-4"><img src="https://assets.tryhackme.com/room-badges/5dc473b3c0760f5dcdcc116cf1993c58.png" class="img-fluid badge-img"></div>
-      <div class="col-6 col-md-3 mb-4"><img src="https://assets.tryhackme.com/room-badges/6415bf49301884014fc5e77eb08222a3.png" class="img-fluid badge-img"></div>
-      <div class="col-6 col-md-3 mb-4"><img src="https://assets.tryhackme.com/room-badges/afed03daadde2dcdaf507fff2f3267b0.png" class="img-fluid badge-img"></div>
-      <div class="col-6 col-md-3 mb-4"><img src="https://assets.tryhackme.com/room-badges/fa7225f507ab9708b0cee020d525d036.png" class="img-fluid badge-img"></div>
-      <div class="col-6 col-md-3 mb-4"><img src="https://assets.tryhackme.com/room-badges/efa2b93997d04f7bff224d7a4970c8d0.png" class="img-fluid badge-img"></div>
-      <div class="col-6 col-md-3 mb-4"><img src="https://assets.tryhackme.com/room-badges/7a2991a5218b4c4e7383b798c91b2cc7.png" class="img-fluid badge-img"></div>
-      <div class="col-6 col-md-3 mb-4"><img src="https://assets.tryhackme.com/room-badges/ac8eeb0c66e7b789d0eaf8b31282ae8b.png" class="img-fluid badge-img"></div>
-      <div class="col-6 col-md-3 mb-4"><img src="https://assets.tryhackme.com/room-badges/1b603e7b74d7823b8023a730c607cd47.png" class="img-fluid badge-img"></div>
-      <div class="col-6 col-md-3 mb-4"><img src="https://assets.tryhackme.com/room-badges/4d604b455136fd3f395b6b1ba8d76a88.png" class="img-fluid badge-img"></div>
-      <div class="col-6 col-md-3 mb-4"><img src="https://assets.tryhackme.com/room-badges/77e92fd716a09bab714b7669b11ba200.png" class="img-fluid badge-img"></div>
-      <div class="col-6 col-md-3 mb-4"><img src="https://assets.tryhackme.com/room-badges/77ce01409bd41b9c9281f196a56df291.png" class="img-fluid badge-img"></div>
-      <div class="col-6 col-md-3 mb-4"><img src="https://assets.tryhackme.com/room-badges/585735ca0b31227ba5d5075a1f4d146d.png" class="img-fluid badge-img"></div>
-      <div class="col-6 col-md-3 mb-4"><img src="https://assets.tryhackme.com/room-badges/b14604217392930b0331b22f35deda99.png" class="img-fluid badge-img"></div>
-      <div class="col-6 col-md-3 mb-4"><img src="https://assets.tryhackme.com/room-badges/74ed4f8ad9edaad0800394e890a84078.png" class="img-fluid badge-img"></div>
-      <div class="col-6 col-md-3 mb-4"><img src="https://assets.tryhackme.com/room-badges/9ac9e33e41fb9d052f3c7fad05a90f9b.png" class="img-fluid badge-img"></div>
-    </div>
+  <div>
+    powrde by said 2025
   </div>
-</section>
-
-<!-- Footer -->
-<footer class="text-center py-4 bg-dark">
-  &copy; 2025 Saad Ayady - All Rights Reserved.
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<!-- AOS Animation JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1200,
-  });
-</script>
 </body>
 </html>
