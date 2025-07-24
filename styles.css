@@ -1,15 +1,15 @@
-*{
+/* بقى نفس الأساس */
+* {
   padding: 0;
   margin: 0;
 }
 
 html {
-    font-family: "Fira Code", monospace;
-
+  font-family: "Fira Code", monospace;
 }
 
 body {
-  background-image: 
+  background-image:
     linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url('https://stuuxx.netlify.app/images/01.jpg');
   background-size: cover;
@@ -19,9 +19,9 @@ body {
 
 .home {
   background: rgba(0, 0, 0, 0.5);
-  max-width: 550px; 
-  width: 100%;
-  height: 96vh;
+  max-width: 550px;
+  width: 95%; /* خليها نسبة مئوية */
+  min-height: 96vh;
   margin: 5px auto;
   padding: 0 20px;
   margin-top: 2vh;
@@ -31,7 +31,6 @@ body {
 img {
   width: 40px;
   height: 40px;
-
 }
 
 .before {
@@ -41,7 +40,8 @@ img {
 .link {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  flex-wrap: wrap; /* باش ما يتزاحموش */
+  gap: 20px;
 }
 
 .link a {
@@ -50,19 +50,30 @@ img {
   font-weight: bold;
 }
 
-.pro img {
-  width: 150px;
-  height: 130px;
-  border-radius: 10px;
-  margin-left:20px ;
-  margin-bottom: 10px;
-  margin-top: 12px;
-}
-
 .pro {
   position: relative;
   background: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
+  display: flex; /* flex */
+  flex-wrap: wrap; /* الصور والكود يطيحو تحت بعضهم */
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.pro img {
+  width: 120px;
+  height: auto;
+  border-radius: 10px;
+  margin: 0;
+}
+
+.code {
+  position: static; /* حيدنا absolute */
+  margin-left: 15px;
+  margin-top: 10px;
+  color: white;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px;
 }
 
 .dec {
@@ -71,31 +82,21 @@ img {
 
 .spech_char {
   color: gray;
-
 }
 
 .varData {
- color: green;
-
+  color: green;
 }
 
 .pro p {
   font-weight: bold;
 }
 
-.code {
-  position: absolute;
-  top: 20px; /* من الفوق */
-  left: 190px; /* من اليسار */
-  color: white; /* اللون ديال الكتابة */
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.2);
-}
-
 .box {
   background: rgba(0, 0, 0, 0.5);
   padding: 7px;
   color: white;
+  margin-bottom: 15px;
 }
 
 .box h2 {
@@ -105,19 +106,55 @@ img {
 .long-code {
   margin-top: 10px;
   display: flex;
-  align-items: center; /* وسط عمودي */
-  gap: 10px; /* المسافة بين الصور والنص */
-  flex-wrap: wrap; /* يخلي الصور يطيحو لسطر جديد إذا تزاحمو */
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
   background: rgba(0, 0, 0, 0.3);
 }
 
 .long-code p {
   font-weight: bold;
-  margin: 0; /* نشيل المسافات الافتراضية */
+  margin: 0;
   background: rgba(0, 0, 0, 1.0);
 }
 
 .long-code img {
-  width: 40px; /* ولا الحجم لي بغيتيه */
+  width: 35px;
   height: auto;
+}
+
+/* ✅✅✅ RESPONSIVE MEDIA QUERY */
+@media (max-width: 600px) {
+  .home {
+    width: 95%;
+    padding: 0 10px;
+  }
+
+  .pro {
+    flex-direction: column; /* الصورة و الكود تحت بعضهم */
+    align-items: center;
+    text-align: center;
+  }
+
+  .pro img {
+    width: 120px;
+    margin-bottom: 10px;
+  }
+
+  .code {
+    margin: 0;
+    position: static;
+  }
+
+  .link {
+    gap: 10px;
+  }
+
+  .long-code {
+    justify-content: center;
+  }
+
+  .long-code img {
+    width: 30px;
+  }
 }
