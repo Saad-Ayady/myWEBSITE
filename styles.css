@@ -1,4 +1,3 @@
-/* بقى نفس الأساس */
 * {
   padding: 0;
   margin: 0;
@@ -20,12 +19,18 @@ body {
 .home {
   background: rgba(0, 0, 0, 0.5);
   max-width: 550px;
-  width: 95%; /* خليها نسبة مئوية */
-  min-height: 96vh;
+  width: 95%; 
+  height: 95vh;
   margin: 5px auto;
   padding: 0 20px;
   margin-top: 2vh;
   border-radius: 10px;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+}
+
+.home::-webkit-scrollbar {
+  display: none;
 }
 
 img {
@@ -40,7 +45,7 @@ img {
 .link {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; /* باش ما يتزاحموش */
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -48,14 +53,15 @@ img {
   text-decoration: none;
   color: white;
   font-weight: bold;
+  font-family: "Pixelify Sans", sans-serif;
 }
 
 .pro {
   position: relative;
   background: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
-  display: flex; /* flex */
-  flex-wrap: wrap; /* الصور والكود يطيحو تحت بعضهم */
+  display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   padding: 10px;
 }
@@ -68,7 +74,7 @@ img {
 }
 
 .code {
-  position: static; /* حيدنا absolute */
+  position: static;
   margin-left: 15px;
   margin-top: 10px;
   color: white;
@@ -123,9 +129,75 @@ img {
   height: auto;
 }
 
+.cards {
+    display: flex;
+    align-items: flex-start; /* ou center selon votre préférence */
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    margin-top : 20px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.cards img {
+  width: 110px;
+  height: 110px;
+  border-radius: 10px;
+  margin-top: 3px;
+  margin-left: 3px;
+}
+
+.cards h2 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.nice_words{
+  color: red;
+}
+
+.cards a {
+  text-decoration: none;
+}
+
+.cards p {
+  color: white;
+  font-weight: bold;
+}
+
+.card_links {
+    display: flex;
+    align-items: flex-start; /* ou center selon votre préférence */
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    margin-top : 10px;
+    padding: 5px;
+    border-radius: 10px;
+    height: 60px;
+}
+
+.card_links img{
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.card_links a {
+  color: white;
+  text-decoration: none;
+}
+
+.card_links h3{
+  font-family: "Pixelify Sans", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 10px;
+}
+
 @media (max-width: 600px) {
   body {
-    background: #fff; /* بيضاء بلا صورة */
+    background: #fff; 
     background-image: none;
   }
 
@@ -136,7 +208,7 @@ img {
 
   .pro {
     display: flex;
-    flex-direction: column; /* الصورة + الكود يهبط تحتها */
+    flex-direction: column;
     align-items: center;
     text-align: center;
   }
@@ -147,15 +219,15 @@ img {
   }
 
   .code {
-    position: static; /* نحيّد absolute */
+    position: static;
     margin: 0;
-    background: rgba(0, 0, 0, 0.1); /* خفيف */
+    background: rgba(0, 0, 0, 0.1);
     padding: 10px;
   }
 
   .link {
     flex-wrap: wrap;
-    gap: 5px; /* قرب المسافة بينهم */
+    gap: 5px;
   }
 
   .long-code {
