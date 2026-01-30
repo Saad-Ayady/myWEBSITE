@@ -32,7 +32,7 @@
           <span class="dec">char </span><span class="var_name">lasttName</span><span class="spech_char">[</span><span>10</span><span class="spech_char">]</span><span class="igal"> = </span><span class="varData">"Ayady"</span><span class="spech_char">;</span>
         </p>
         <p>
-          <span class="dec">int  </span><span class="var_name"> age</span><span class="igal"> = </span><span class="varData">20</span><span class="spech_char">;</span>
+          <span class="dec">int  </span><span class="var_name"> age</span><span class="igal"> = </span><span class="varData" id="age">20</span><span class="spech_char">;</span>
         </p>
         <p>
           <span class="dec">char </span><span class="var_name">contrue</span><span class="spech_char">[</span><span>10</span><span class="spech_char">]</span><span class="igal"> = </span><span class="varData">"Morocoo"</span><span class="spech_char">;</span>
@@ -91,4 +91,17 @@
   </div>
 
 </body>
+  <script>
+    function calcAge(year, month, day) {
+  const birthDate = new Date(year, month, day);
+  const today = new Date();
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+   document.getElementById("result").innerHTML = age;
+}
+    calcAge(2004,12,24);
+  </script>
 </html>
