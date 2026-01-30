@@ -92,16 +92,21 @@
 
 </body>
   <script>
-    function calcAge(year, month, day) {
-  const birthDate = new Date(year, month, day);
-  const today = new Date();
-  let age = today.getFullYear() - birthDate.getFullYear();
-  const m = today.getMonth() - birthDate.getMonth();
-  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-    age--;
+  function calcAge(year, month, day) {
+    const birthDate = new Date(year, month - 1, day);
+    const today = new Date();
+
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+
+    document.getElementById("age").innerHTML = age;
   }
-   document.getElementById("result").innerHTML = age;
-}
-    calcAge(2004,12,24);
-  </script>
+
+  calcAge(2004, 12, 24);
+</script>
+
 </html>
