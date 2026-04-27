@@ -19,14 +19,15 @@ body {
 .home {
   background: rgba(0, 0, 0, 0.5);
   max-width: 550px;
-  width: 95%; 
+  width: 95%;
   height: 95vh;
   margin: 5px auto;
   padding: 0 20px;
   margin-top: 2vh;
   border-radius: 10px;
   overflow-y: auto;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 .home::-webkit-scrollbar {
@@ -130,13 +131,14 @@ img {
 }
 
 .cards {
-    display: flex;
-    align-items: flex-start; /* ou center selon votre préférence */
-    gap: 20px;
-    background: rgba(0, 0, 0, 0.5);
-    margin-top : 20px;
-    padding: 5px;
-    border-radius: 10px;
+  display: flex;
+  align-items: flex-start;
+  /* ou center selon votre préférence */
+  gap: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .cards img {
@@ -152,7 +154,7 @@ img {
   margin-bottom: 10px;
 }
 
-.nice_words{
+.nice_words {
   color: red;
 }
 
@@ -166,17 +168,17 @@ img {
 }
 
 .card_links {
-    display: flex;
-    align-items: flex-start; 
-    gap: 20px;
-    background: rgba(0, 0, 0, 0.5);
-    margin-top : 10px;
-    padding: 5px;
-    border-radius: 10px;
-    height: 60px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  height: 60px;
 }
 
-.card_links img{
+.card_links img {
   width: 60px;
   height: 60px;
   background-color: white;
@@ -188,7 +190,7 @@ img {
   text-decoration: none;
 }
 
-.card_links h3{
+.card_links h3 {
   font-family: "Pixelify Sans", sans-serif;
   font-weight: bold;
   font-size: 30px;
@@ -200,7 +202,7 @@ img {
   align-items: center;
   background: rgba(0, 0, 0, 0.5);
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   padding: 20px;
   gap: 20px;
   max-width: 900px;
@@ -210,7 +212,7 @@ img {
 
 .card-cer:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .card-cer img {
@@ -226,7 +228,7 @@ img {
   line-height: 1.6;
   margin: 0 0 10px;
   color: white;
-    font-family: "Fira Code", monospace;
+  font-family: "Fira Code", monospace;
   font-weight: bold;
   font-size: 15px;
 
@@ -250,77 +252,77 @@ img {
 
 
 .writeups-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-        }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
 
-        .cardWritUp {
-            background-color: #161b22;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #30363d;
-        }
+.cardWritUp {
+  background-color: #161b22;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #30363d;
+}
 
-        .cardWritUp:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-            border-color: #58a6ff;
-        }
+.cardWritUp:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  border-color: #58a6ff;
+}
 
-        .cardWritUp img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-bottom: 1px solid #30363d;
-        }
+.cardWritUp img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #30363d;
+}
 
-        .cardWritUp a {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            padding: 20px;
-        }
+.cardWritUp a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 20px;
+}
 
-        .ctf-title {
-            color: #58a6ff;
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            transition: color 0.2s ease;
-        }
+.ctf-title {
+  color: #58a6ff;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  transition: color 0.2s ease;
+}
 
-        .cardWritUp:hover .ctf-title {
-            color: #79c0ff;
-        }
+.cardWritUp:hover .ctf-title {
+  color: #79c0ff;
+}
 
-        .ctf-bio {
-            color: #8b949e;
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
+.ctf-bio {
+  color: #8b949e;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
 
-        .ctf-bio span {
-            display: inline-block;
-            background-color: #238636;
-            color: white;
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-top: 5px;
-        }
+.ctf-bio span {
+  display: inline-block;
+  background-color: #238636;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
 
-        .difficulty-easy {
-            background-color: #238636 !important;
-        }
+.difficulty-easy {
+  background-color: #238636 !important;
+}
 
-        .difficulty-medium {
-            background-color: #d29922 !important;
-        }
+.difficulty-medium {
+  background-color: #d29922 !important;
+}
 
-        .difficulty-hard {
-            background-color: #da3633 !important;
-        }
+.difficulty-hard {
+  background-color: #da3633 !important;
+}
 
 @media (max-width: 600px) {
   .card-cer {
@@ -337,7 +339,7 @@ img {
 
 @media (max-width: 600px) {
   body {
-    background: #fff; 
+    background: #fff;
     background-image: none;
   }
 
@@ -377,4 +379,54 @@ img {
   .long-code img {
     width: 30px;
   }
+}
+
+.bug_cover {
+  width: 320px;
+  background: #0f172a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: 0.3s ease;
+  font-family: Arial, sans-serif;
+}
+
+.bug_cover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.bug_cover a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.bug_cover img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.info_bug {
+  padding: 15px;
+}
+
+.info_bug h2 {
+  font-size: 16px;
+  color: #e2e8f0;
+  margin: 8px 0;
+}
+
+.info_bug span {
+  color: #38bdf8;
+  font-weight: bold;
+}
+
+.low-lev {
+  color: #22c55e;
+  padding: 3px 8px;
+  background: rgba(34, 197, 94, 0.1);
+  border-radius: 6px;
+  font-size: 13px;
 }

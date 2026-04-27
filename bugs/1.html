@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Security Writeup - BOLA in Bookmarks API</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 40px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #38bdf8;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        }
+
+        code {
+            background: #0b1220;
+            padding: 10px;
+            display: block;
+            border-radius: 8px;
+            overflow-x: auto;
+            color: #f8fafc;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 5px 10px;
+            background: #ef4444;
+            border-radius: 5px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .info {
+            background: #0ea5e9;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🔐 Security Writeup</h1>
+        <h2>BOLA in Bookmarks API</h2>
+
+        <div class="card">
+            <span class="tag">Insecure Direct Object Reference</span>
+            <p><strong>Target:</strong> DPG Media / De Morgen</p>
+            <p><strong>Code:</strong> DPGM-LQ1L4IAL</p>
+            <p><strong>Severity:</strong> Low (Platform rating)</p>
+            <p><strong>Status:</strong> Archived / Duplicate</p>
+        </div>
+
+        <div class="card">
+            <h3>🧠 Summary</h3>
+            <p>
+                A Broken Object Level Authorization (BOLA) vulnerability was identified in the Bookmarks API.
+                The API fails to properly verify ownership of user data, allowing cross-account access.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>⚠️ Issue Description</h3>
+            <p>
+                The endpoint allows operations on bookmarks using a user identifier (UUID) without verifying
+                whether the authenticated user owns the requested resource.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🧪 Example Request</h3>
+            <code>
+POST /api/_next-api/bookmarks/ HTTP/1.1<br>
+Host: shop.demorgen.be<br>
+Content-Type: application/json<br><br>
+
+{<br>
+&nbsp;&nbsp;"userId": "VICTIM-UUID",<br>
+&nbsp;&nbsp;"action": "list"<br>
+}
+        </code>
+        </div>
+
+        <div class="card">
+            <h3>💥 Impact</h3>
+            <ul>
+                <li>Cross-account bookmark access</li>
+                <li>Data privacy violation</li>
+                <li>Unauthorized data manipulation</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>🛡️ Recommendation</h3>
+            <ul>
+                <li>Enforce strict object-level authorization checks</li>
+                <li>Bind session user to resource ownership</li>
+                <li>Reject user-controlled identifiers for sensitive actions</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>📌 Conclusion</h3>
+            <p>
+                This issue highlights a classic BOLA vulnerability where missing authorization checks allow
+                cross-user access to sensitive data.
+            </p>
+        </div>
+
+        <div class="info">
+            ⚡ Writeup created for educational and security research purposes.
+        </div>
+
+    </div>
+
+</body>
+
+</html>
