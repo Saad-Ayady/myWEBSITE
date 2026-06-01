@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0b0f0d;
+    color: #d9e3dc;
+    font-family: 'JetBrains Mono', monospace;
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+    line-height: 1.8;
+}
+
+/* ---------- Cards ---------- */
+
+.cardCtf,
+.me {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: #111814;
+    border: 1px solid #223126;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 20px rgba(0, 255, 128, .05);
+}
+
+.cardCtf img,
+.me img {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2px solid #2c4635;
+}
+
+.info-ctf p,
+.info-me p {
+    margin: 8px 0;
+}
+
+.info-ctf span,
+.info-me span {
+    color: #63ff97;
+    font-weight: bold;
+}
+
+/* ---------- Level ---------- */
+
+.l-hard {
+    background: #4b1111;
+    color: #ff7373 !important;
+    padding: 4px 12px;
+    border-radius: 7px;
+}
+
+/* ---------- Skills ---------- */
+
+.skiles {
+    display: inline-block;
+    background: #163121;
+    color: #7dffae !important;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin: 2px;
+}
+
+/* ---------- Writeup ---------- */
+
+.writUp {
+    background: #111814;
+    border: 1px solid #223126;
+    border-radius: 15px;
+    padding: 35px;
+    margin-top: 20px;
+}
+
+.text {
+    margin: 18px 0;
+    color: #c7d3ca;
+}
+
+.title {
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    color: #7dffae;
+    font-weight: bold;
+    border-left: 4px solid #63ff97;
+    padding-left: 15px;
+}
+
+/* ---------- SQL Blocks ---------- */
+
+.sql {
+    background: #0d1310;
+    border-left: 4px solid #63ff97;
+    color: #63ff97;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow-x: auto;
+    word-break: break-all;
+}
+
+/* ---------- Images ---------- */
+
+.writUp img {
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 12px;
+    border: 1px solid #24392c;
+}
+
+/* ---------- Results ---------- */
+
+.sucreselt {
+    background: #102017;
+    color: #6fff9d;
+    border: 1px solid #21452d;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.flag {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #63ff97;
+    background: #08150d;
+    border: 2px solid #2a7a4a;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(99, 255, 151, .15);
+}
+
+.red {
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+/* ---------- Link ---------- */
+
+.linkCTF {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.linkCTF a {
+    display: inline-block;
+    text-decoration: none;
+    color: #63ff97;
+    border: 1px solid #2c4635;
+    padding: 12px 25px;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.linkCTF a:hover {
+    background: #163121;
+    transform: translateY(-3px);
+}
+
+/* ---------- Mobile ---------- */
+
+@media(max-width:768px) {
+
+    .cardCtf,
+    .me {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cardCtf img,
+    .me img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .writUp {
+        padding: 20px;
+    }
+}
